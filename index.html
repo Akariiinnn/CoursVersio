@@ -43,6 +43,21 @@
       transform: scale(1.1);
     }
 
+    .rotate-page {
+    animation: rotateAnimation 2s ease-in-out;
+    transform-origin: center;
+  }
+
+  @keyframes rotateAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
   </style>
 </head>
 
@@ -79,8 +94,7 @@
         <img src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/2020-Chevrolet-Corvette-Stingray/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1440" alt="Car 2">
       </div>
       <div class="col-md-4">
-        <img src="https://www.topgear.com/sites/default/files/news-listicle/image/2023/01/1.jpeg?w=848&h=477" alt="Car 3">
-
+        <img id="thirdImage" src="https://www.topgear.com/sites/default/files/news-listicle/image/2023/01/1.jpeg?w=848&h=477" alt="Car 3">
       </div>
     </div>
   </div>
@@ -89,6 +103,18 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Sélectionnez la troisième image
+      var thirdImage = document.getElementById('thirdImage');
+  
+      // Ajoutez un gestionnaire d'événements au clic
+      thirdImage.addEventListener('click', function () {
+        // Appliquez une classe avec une animation à la page
+        document.body.classList.add('rotate-page');
+      });
+    });
+  </script>
 </body>
 
 </html>
